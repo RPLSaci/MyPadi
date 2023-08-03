@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MoonL/Tsukari</title>
+   <link rel="stylesheet" href="./assets/css/main.css">
+   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+   <script src="./assets/js/index.js" defer></script>
+   <script src="./assets/js/util/loadExtension.js" defer></script>
+   <script src="./assets/js/util/country.js" defer></script>
+   <script src="../node_modules/flowbite/dist/flowbite.js"></script>
+</head>
+
+<body class="bg-hijau-300 h-full min-h-[100vh]">
+   <nav class="p-2 sm:p-4 py-2.5 bg-amber-300 border-amber-200 dark:bg-amber-300 dark:border-amber-700">
+      <div class="container flex flex-wrap items-center justify-between mx-auto">
+        <a href="#" class="flex items-center">
+            <img src="./assets/img/logoSidebar.jpeg" class="h-6 mr-3 sm:h-10 rounded-full" alt="Flowbite Logo" />
+            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">MyPadi</span>
+        </a>
+        <!-- <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+          <ul class="flex flex-col p-4 mt-4 border border-amber-100 rounded-lg bg-amber-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-amber-800 md:dark:bg-amber-900 dark:border-amber-700">
+            <li>
+               <a href="./index.html"
+                   class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-amber-400 dark:bg-blue-600 md:dark:bg-transparent"
+                   aria-current="page">Home</a>
+           </li>
+            <li>
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-amber-700 border-b border-amber-100 hover:bg-amber-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-amber-400 dark:hover:text-white dark:focus:text-white dark:border-amber-700 dark:hover:bg-amber-700 md:dark:hover:bg-transparent">Extensions <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                <!-- Dropdown menu -->
+                <!-- <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-amber-100 rounded shadow w-44 dark:bg-amber-700 dark:divide-amber-600">
+                    <ul id="navLi" class="py-1 text-sm text-amber-700 dark:text-amber-400" aria-labelledby="dropdownLargeButton">
+
+                    </ul>
+                </div>
+            </li>
+            <li>
+               <a href="./settings.html" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-amber-400 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Settings</a>
+            </li>
+          </ul>
+        </div> --> 
+      </div>
+    </nav>
+    
+   <div class="flex">
+      <div id="main" class="m-auto">
+
+      </div>
+   </div>
+</body>
+<!-- PLACEHOLDER -->
+<div class="hidden">
+   <a href="#" class="block mt-12 max-w-sm p-6 bg-white border border-amber-200 rounded-lg shadow-md hover:bg-amber-100 dark:bg-amber-800 dark:border-amber-700 dark:hover:bg-amber-700">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 dark:text-white">placeholder</h5>
+      <p class="font-normal text-amber-700 dark:text-amber-400">placeholder</p>
+  </a>
+  <a  class="block mt-12 max-w-sm p-6 bg-white border border-amber-200 rounded-lg shadow-md hover:bg-amber-100 dark:bg-amber-800 dark:border-amber-700 dark:hover:bg-amber-700">
+   <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 dark:text-white">${data.name}</h5>
+       <p class="font-normal text-amber-700 dark:text-amber-400">${getCountryName(data.lang)}</p>
+   </a>
+   <a 
+   class="flex items-center p-2 text-base font-normal text-amber-900 rounded-lg dark:text-white hover:bg-amber-100 dark:hover:bg-amber-700">
+   <span class="ml-3">${data.name}</span>
+</a>
+</div>
+</html>
