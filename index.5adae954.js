@@ -1,2 +1,3 @@
-
-//# sourceMappingURL=index.5adae954.js.map
+const globalvar = {
+    api:"https://padiapi.vercel.app/api/"
+}
