@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MoonL/Tsukari</title>
+   <link rel="stylesheet" href="./assets/css/main.css">
+   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+   <script src="./assets/js/util/apis.js" defer></script>
+   <script src="./assets/js/login.js" defer></script>
+   <script src="./assets/js/util/country.js" defer></script>
+   <script src="../node_modules/flowbite/dist/flowbite.js"></script>
+</head>
+
+<body class="bg-hijau-300 h-full min-h-[100vh]">
+   <div class="flex">
+      <div id="main" class="m-auto">
+         <section>
+            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <a href="#" class="flex items-center mb-6 text-4xl font-semibold text-white">
+                    <img class="w-16 h-16 mr-2 rounded-full" src="./assets/img/logoSidebar.jpeg" alt="logo">
+                    MyPadi    
+                </a>
+                <div class="w-full bg-amber-300 rounded-lg md:mt-0 sm:max-w-md xl:p-0 text-black" id="singin">
+                    <div class="p-8 space-y-4 md:space-y-6 sm:p-8">
+                        <h1 class="text-xl font-bold leading-tight tracking-tight text-black md:text-2xl text-center">
+                            Masuk ke akun mu
+                        </h1>
+                        <div class="space-y-4 md:space-y-6" action="#">
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-black">Nama Akunmu</label>
+                                <input name="email" id="email" class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg block w-full p-2.5" placeholder="Nama Pengguna" required="">
+                            </div>
+                            <div>
+                                <label for="password" class="block mb-2 text-sm font-medium text-black">Kata Sandi</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg block w-full p-2.5" required="">
+                            </div>
+                            <div class="flex items-center justify-between mt-4">
+                                <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Lupa Kata Sandi?</a>
+                            </div>
+                            <button type="submit" class="w-full text-white focus:ring-4 focus:outline-none focus:ring-hijau-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-hijau-600 hover:bg-hijau-700 " onclick="login()">Masuk</button>
+                            <p class="text-sm font-light text-black">
+                                Belum memiliki akun? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500" onclick="toggle()">Daftar</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                        <div class="w-full bg-amber-300 rounded-lg md:mt-0 sm:max-w-md xl:p-0 text-black hidden" id="singup">
+                            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                                <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl text-black text-center">
+                                    Buat Akun
+                                </h1>
+                                <div class="space-y-4 md:space-y-6" action="#">
+                                    <div>
+                                        <label for="emailreg" class="block mb-2 text-sm font-medium text-black">Nama Akunmu</label>
+                                        <input type="emailreg" name="emailreg" id="emailreg" class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg block w-full p-2.5" placeholder="Nama Pengguna" required="">
+                                    </div>
+                                    <div>
+                                        <label for="passwordreg" class="block mb-2 text-sm font-medium text-black">Kata Sandi</label>
+                                        <input type="password" name="passwordreg" id="passwordreg" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg block w-full p-2.5" required="">
+                                    </div>
+                                    <div>
+                                        <label for="confirm-passwordreg" class="block mb-2 text-sm font-medium text-black">Konfirmasi Kata Sandi</label>
+                                        <input type="password" name="confirm-passwordreg" id="confirm-passwordreg" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg block w-full p-2.5" required="">
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                          <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-white focus:ring-3 focus:ring-primary-300" required="">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                          <label for="terms" class="font-light text-black">Saya menyetujui <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Syarat dan Ketentuan</a></label>
+                                        </div>
+                                    </div>
+                                        <button onclick="register()" class="w-full text-white focus:ring-4 focus:outline-none focus:ring-hijau-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-hijau-600 hover:bg-hijau-700 ">Daftar</button>
+                                        <p class="text-sm font-light text-black">
+                                        Sudah mempunyai akun? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500" onclick="toggle()">Masuk</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+          </section>
+      </div>
+   </div>
+</body>
+<!-- PLACEHOLDER -->
+<div class="hidden">
+   <a href="#" class="block mt-12 max-w-sm p-6 bg-white border border-amber-200 rounded-lg shadow-md hover:bg-amber-100 dark:bg-amber-800 dark:border-amber-700 dark:hover:bg-amber-700">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 dark:text-white">placeholder</h5>
+      <p class="font-normal text-amber-700 dark:text-amber-400">placeholder</p>
+  </a>
+  <a  class="block mt-12 max-w-sm p-6 bg-white border border-amber-200 rounded-lg shadow-md hover:bg-amber-100 dark:bg-amber-800 dark:border-amber-700 dark:hover:bg-amber-700">
+   <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 dark:text-white">${data.name}</h5>
+       <p class="font-normal text-amber-700 dark:text-amber-400">${getCountryName(data.lang)}</p>
+   </a>
+   <a 
+   class="flex items-center p-2 text-base font-normal text-amber-900 rounded-lg dark:text-white hover:bg-amber-100 dark:hover:bg-amber-700">
+   <span class="ml-3">${data.name}</span>
+</a>
+</div>
+</html>

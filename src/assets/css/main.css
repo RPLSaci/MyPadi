@@ -7,3 +7,7 @@
 #navLi a {
     text-align:center
 }
+
+.card {
+    min-height: 200px;
+}
