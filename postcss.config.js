@@ -1,9 +1,9 @@
 const purgecss = require('postcss-purgecss')({
   // Specify the paths to all of the template files in your project
   content: [
-    './src/**/*.html',
-    './src/**/*.vue',
-    './src/**/*.jsx',
+    './src/*.html',
+    './src/*.vue',
+    './src/*.jsx',
     // etc.
   ],
 
