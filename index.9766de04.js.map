@@ -1,1 +1,0 @@
-{"mappings":"","sources":["src/assets/js/util/apis.js"],"sourcesContent":["const globalvar = {\n    api:\"https://padiapi.vercel.app/api/\"\n}"],"names":[],"version":3,"file":"index.9766de04.js.map"}
