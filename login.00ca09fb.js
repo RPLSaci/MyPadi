@@ -1,6 +1,5 @@
-(() => {
 console.log("Login loaded");
-function $24dffd4072f4447f$var$toggle() {
+function toggle() {
     if (document.querySelector("#singin").classList.contains("hidden")) {
         document.querySelector("#singin").classList.remove("hidden");
         document.querySelector("#singup").classList.add("hidden");
@@ -9,8 +8,8 @@ function $24dffd4072f4447f$var$toggle() {
         document.querySelector("#singup").classList.remove("hidden");
     }
 }
-$24dffd4072f4447f$var$register();
-async function $24dffd4072f4447f$var$register() {
+register();
+async function register() {
     try {
         const username = document.getElementById("emailreg").value;
         const password = document.getElementById("passwordreg").valute;
@@ -26,8 +25,8 @@ async function $24dffd4072f4447f$var$register() {
             return;
         }
         const userData = {
-            username: username,
-            password: password
+            username,
+            password
         };
         const response = await fetch(globalvar.api + "signup", {
             method: "POST",
@@ -51,12 +50,12 @@ async function $24dffd4072f4447f$var$register() {
         alert("Something went wrong.");
     }
 }
-async function $24dffd4072f4447f$var$login() {
+async function login() {
     const username = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const userData = {
-        username: username,
-        password: password
+        username,
+        password
     };
     const response = await fetch(globalvar.api + "login", {
         method: "POST",
@@ -73,4 +72,3 @@ async function $24dffd4072f4447f$var$login() {
     } else alert(data.error);
 }
 
-})();

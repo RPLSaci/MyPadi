@@ -1,2 +1,0 @@
-let e=localStorage.getItem("user");// Assuming the token is stored in localStorage
-async function a(){let e=await fetch(globalvar.api+"ai/generateId",{method:"GET"}),a=await e.json();console.log(a),localStorage.setItem("id",a.message)}e=JSON.parse(e).token,localStorage.getItem("id")||a();

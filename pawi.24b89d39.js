@@ -1,8 +1,7 @@
-(() => {
-let $a7e0062e22903d72$var$token = localStorage.getItem("user"); // Assuming the token is stored in localStorage
-$a7e0062e22903d72$var$token = JSON.parse($a7e0062e22903d72$var$token).token;
-if (!localStorage.getItem("id")) $a7e0062e22903d72$var$generateId();
-async function $a7e0062e22903d72$var$generateId() {
+let token = localStorage.getItem("user"); // Assuming the token is stored in localStorage
+token = JSON.parse(token).token;
+if (!localStorage.getItem("id")) generateId();
+async function generateId() {
     const response = await fetch(globalvar.api + "ai/generateId", {
         method: "GET"
     });
@@ -10,13 +9,13 @@ async function $a7e0062e22903d72$var$generateId() {
     console.log(res);
     localStorage.setItem("id", res.message);
 }
-async function $a7e0062e22903d72$var$pertanyaan() {
+async function pertanyaan() {
     question = document.getElementById("tanya").value;
     document.getElementById("tanya").value = "";
     id = localStorage.getItem("id");
     const userData = {
-        question: question,
-        id: id
+        question,
+        id
     };
     document.querySelector("#chats").innerHTML += `
     <div class="flex justify-end">
@@ -28,7 +27,7 @@ async function $a7e0062e22903d72$var$pertanyaan() {
     const response = await fetch(globalvar.api + "ai/ask", {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${$a7e0062e22903d72$var$token}`,
+            "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify(userData)
@@ -42,4 +41,3 @@ async function $a7e0062e22903d72$var$pertanyaan() {
    </div>`;
 }
 
-})();
