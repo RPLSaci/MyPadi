@@ -74,7 +74,7 @@ async function showPosition(position) {
     document.getElementById("cuaca").classList.remove("hidden");
     document.getElementById("lokasi").innerText = data.location.name;
     document.getElementById("status").innerText = data.cond.weather.description;
-    document.getElementById("temp").innerText = data.cond.weather.temp.cur;
+    document.getElementById("temp").innerText = data.cond.weather.temp.cur + "\xb0 C";
     document.getElementById("urlFoto").setAttribute("src", data.cond.weather.icon.url);
 // 
 //                            <h2 class="card-title" id="lokasi">Purwakarta</h2>
@@ -86,4 +86,4 @@ let strToCards = `
 
 `;
 
-//# sourceMappingURL=index.8fa162e6.js.map
+//# sourceMappingURL=index.f3645af4.js.map

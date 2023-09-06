@@ -250,4 +250,4 @@ function getCountryName(countryCode) {
     else return countryCode;
 }
 
-//# sourceMappingURL=index.3f72810c.js.map
+//# sourceMappingURL=berita.4ed9912c.js.map

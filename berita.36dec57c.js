@@ -3684,4 +3684,4 @@ reference element's position.
     /******/ }();
 });
 
-//# sourceMappingURL=index.06be759f.js.map
+//# sourceMappingURL=berita.36dec57c.js.map
