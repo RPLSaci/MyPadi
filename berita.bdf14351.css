@@ -3126,6 +3126,10 @@ html {
   min-width: 50vh;
 }
 
+.max-w-\[100\%\] {
+  max-width: 100%;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -3823,4 +3827,4 @@ html {
   }
 }
 
-/*# sourceMappingURL=berita.13f73cb5.css.map */
+/*# sourceMappingURL=berita.bdf14351.css.map */
