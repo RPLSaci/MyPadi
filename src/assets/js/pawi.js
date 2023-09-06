@@ -22,7 +22,7 @@ let Tanya = false
 
 
 async function pertanyaan() {
-  if(tanya) {
+  if(tanya === true) {
     return
   }
   Tanya = true
