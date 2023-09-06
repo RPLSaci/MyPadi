@@ -15,7 +15,7 @@ async function generateId() {
 }
 let Tanya = false;
 async function pertanyaan() {
-    if (tanya) return;
+    if (tanya === true) return;
     Tanya = true;
     question = document.getElementById("tanya").value;
     document.getElementById("tanya").value = "";
@@ -49,4 +49,4 @@ async function pertanyaan() {
     Tanya = false;
 }
 
-//# sourceMappingURL=pawi.dc78c0b3.js.map
+//# sourceMappingURL=pawi.b5f1dd8a.js.map

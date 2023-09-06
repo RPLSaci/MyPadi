@@ -16,7 +16,7 @@ async function $21423540d6d3b1e4$var$generateId() {
 }
 let $21423540d6d3b1e4$var$Tanya = false;
 async function $21423540d6d3b1e4$var$pertanyaan() {
-    if (tanya) return;
+    if (tanya === true) return;
     $21423540d6d3b1e4$var$Tanya = true;
     question = document.getElementById("tanya").value;
     document.getElementById("tanya").value = "";
