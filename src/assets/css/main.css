@@ -8,6 +8,14 @@
 
 }
 
+input.flex-grow.border.bg-hijau-400.rounded-md.p-2 {
+    color: white;
+}
+
+input.flex-grow.border.bg-hijau-400.rounded-md.p-2::placeholder {
+    color:white
+}
+
 body {
     font-family: 'Glacial Indifference', sans-serif;
   }

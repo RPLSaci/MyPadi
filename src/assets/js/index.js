@@ -95,7 +95,7 @@ async function showPosition(position) {
       document.getElementById("cuaca").classList.remove("hidden")
       document.getElementById("lokasi").innerText = data.location.name
       document.getElementById("status").innerText = data.cond.weather.description
-      document.getElementById("temp").innerText = data.cond.weather.temp.cur
+      document.getElementById("temp").innerText = data.cond.weather.temp.cur +"° C"
       document.getElementById("urlFoto").setAttribute("src",data.cond.weather.icon.url)
 
       // 
