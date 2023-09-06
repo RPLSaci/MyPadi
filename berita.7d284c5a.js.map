@@ -1,1 +1,0 @@
-{"mappings":"AAAA,MAAM,YAAY;IACd,KAAI;AACR","sources":["src/assets/js/util/apis.js"],"sourcesContent":["const globalvar = {\n    api:\"https://padiapi.vercel.app/api/\"\n}"],"names":[],"version":3,"file":"berita.7d284c5a.js.map"}
