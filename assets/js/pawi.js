@@ -1,8 +1,12 @@
 (() => {
-let $a7e0062e22903d72$var$token = localStorage.getItem("user"); // Assuming the token is stored in localStorage
-$a7e0062e22903d72$var$token = JSON.parse($a7e0062e22903d72$var$token).token;
-if (!localStorage.getItem("id")) $a7e0062e22903d72$var$generateId();
-async function $a7e0062e22903d72$var$generateId() {
+let $21423540d6d3b1e4$var$token = localStorage.getItem("user"); // Assuming the token is stored in localStorage
+$21423540d6d3b1e4$var$token = JSON.parse($21423540d6d3b1e4$var$token).token;
+if (!localStorage.getItem("id")) $21423540d6d3b1e4$var$generateId();
+function $21423540d6d3b1e4$var$resetId() {
+    localStorage.removeItem("id");
+    document.location.href = "./pawi.html";
+}
+async function $21423540d6d3b1e4$var$generateId() {
     const response = await fetch(globalvar.api + "ai/generateId", {
         method: "GET"
     });
@@ -10,7 +14,10 @@ async function $a7e0062e22903d72$var$generateId() {
     console.log(res);
     localStorage.setItem("id", res.message);
 }
-async function $a7e0062e22903d72$var$pertanyaan() {
+let $21423540d6d3b1e4$var$Tanya = false;
+async function $21423540d6d3b1e4$var$pertanyaan() {
+    if (tanya) return;
+    $21423540d6d3b1e4$var$Tanya = true;
     question = document.getElementById("tanya").value;
     document.getElementById("tanya").value = "";
     id = localStorage.getItem("id");
@@ -28,7 +35,7 @@ async function $a7e0062e22903d72$var$pertanyaan() {
     const response = await fetch(globalvar.api + "ai/ask", {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${$a7e0062e22903d72$var$token}`,
+            "Authorization": `Bearer ${$21423540d6d3b1e4$var$token}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify(userData)
@@ -40,6 +47,8 @@ async function $a7e0062e22903d72$var$pertanyaan() {
          ${data.message}
       </div>
    </div>`;
+    $21423540d6d3b1e4$var$Tanya = false;
 }
 
 })();
+//# sourceMappingURL=pawi.js.map

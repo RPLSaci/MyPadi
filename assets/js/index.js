@@ -1,5 +1,5 @@
 (() => {
-async function $513b55a097ed0f6d$var$checkLogin() {
+async function $81db66f57de44e2f$var$checkLogin() {
     try {
         let token = localStorage.getItem("user"); // Assuming the token is stored in localStorage
         token = JSON.parse(token).token;
@@ -24,14 +24,14 @@ async function $513b55a097ed0f6d$var$checkLogin() {
             console.log(`Halo ${data.user}! Anda sudah masuk.`);
             document.getElementById("cards").classList.remove("hidden");
         } else alert("Gagal memeriksa status masuk.");
-        $513b55a097ed0f6d$var$checkUserInfo();
+        $81db66f57de44e2f$var$checkUserInfo();
     } catch (error) {
         console.error(error);
         alert("Kamu Belum Masuk");
         document.location.href = "./login.html";
     }
 }
-async function $513b55a097ed0f6d$var$checkUserInfo() {
+async function $81db66f57de44e2f$var$checkUserInfo() {
     try {
         let token = localStorage.getItem("user"); // Assuming the token is stored in localStorage
         token = JSON.parse(token).token;
@@ -43,20 +43,20 @@ async function $513b55a097ed0f6d$var$checkUserInfo() {
         });
     } catch (error) {}
     try {
-        $513b55a097ed0f6d$var$getLocation();
+        $81db66f57de44e2f$var$getLocation();
     } catch (error) {
         alert("Please allow location detecting");
     }
 }
-function $513b55a097ed0f6d$var$getLocation() {
-    if (navigator.geolocation) navigator.geolocation.getCurrentPosition($513b55a097ed0f6d$var$showPosition);
+function $81db66f57de44e2f$var$getLocation() {
+    if (navigator.geolocation) navigator.geolocation.getCurrentPosition($81db66f57de44e2f$var$showPosition);
     else alert("Geolocation is not supported by this browser.");
 }
-function $513b55a097ed0f6d$var$fahrenheitToCelsius(fahrenheit) {
+function $81db66f57de44e2f$var$fahrenheitToCelsius(fahrenheit) {
     var celsius = (fahrenheit - 32) * 5 / 9;
     return celsius;
 }
-async function $513b55a097ed0f6d$var$showPosition(position) {
+async function $81db66f57de44e2f$var$showPosition(position) {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
     const userData = {
@@ -82,9 +82,10 @@ async function $513b55a097ed0f6d$var$showPosition(position) {
 // <p id="status">sedikit berawan</p>
 // <p id="temp">26°C</p>
 }
-$513b55a097ed0f6d$var$checkLogin();
-let $513b55a097ed0f6d$var$strToCards = `
+$81db66f57de44e2f$var$checkLogin();
+let $81db66f57de44e2f$var$strToCards = `
 
 `;
 
 })();
+//# sourceMappingURL=index.js.map

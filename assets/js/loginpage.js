@@ -1,6 +1,6 @@
 (() => {
 console.log("Login loaded");
-function $24dffd4072f4447f$var$toggle() {
+function $7dedf7def9d809c4$var$toggle() {
     if (document.querySelector("#singin").classList.contains("hidden")) {
         document.querySelector("#singin").classList.remove("hidden");
         document.querySelector("#singup").classList.add("hidden");
@@ -9,8 +9,8 @@ function $24dffd4072f4447f$var$toggle() {
         document.querySelector("#singup").classList.remove("hidden");
     }
 }
-$24dffd4072f4447f$var$register();
-async function $24dffd4072f4447f$var$register() {
+$7dedf7def9d809c4$var$register();
+async function $7dedf7def9d809c4$var$register() {
     try {
         const username = document.getElementById("emailreg").value;
         const password = document.getElementById("passwordreg").valute;
@@ -51,7 +51,7 @@ async function $24dffd4072f4447f$var$register() {
         alert("Something went wrong.");
     }
 }
-async function $24dffd4072f4447f$var$login() {
+async function $7dedf7def9d809c4$var$login() {
     const username = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const userData = {
@@ -74,3 +74,4 @@ async function $24dffd4072f4447f$var$login() {
 }
 
 })();
+//# sourceMappingURL=loginpage.js.map
