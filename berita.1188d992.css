@@ -3406,6 +3406,11 @@ html {
   background-color: rgb(3 58 32 / var(--tw-bg-opacity));
 }
 
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -3814,4 +3819,4 @@ html {
   }
 }
 
-/*# sourceMappingURL=berita.e975c930.css.map */
+/*# sourceMappingURL=berita.1188d992.css.map */
