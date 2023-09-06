@@ -51,12 +51,12 @@
                      <div class="flex">
                         <input type="text" placeholder="Tulis Pesan Kamu..." id="tanya" class="flex-grow border bg-hijau-400 rounded-md p-2">
                         <button class="bg-amber-500 text-white rounded-md px-4 py-2 ml-2" onclick="pertanyaan()">Kirim</button>
+                        <button class="bg-red-500 text-white rounded-md px-4 py-2 ml-2" onclick="resetId()">Reset</button>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-         <!-- <div class="bg-white w-[50vh] h-[85vh] rounded-[2rem]"></div> -->
          <div class="card md:w-[50vh] mt-12 md:mt-0 w-[100%]  h-[85vh] bg-amber-300 text-black">
             <div class="card-body  px-0 pb-0">
                <h2 class="card-title m-auto">Rekomendasi</h2>
@@ -79,6 +79,8 @@
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 dark:text-white">${data.name}</h5>
       <p class="font-normal text-amber-700 dark:text-amber-400">${getCountryName(data.lang)}</p>
    </a>
+         <div class="card md:w-[90vh] w-[90vh] w-[100%] h-[85vh] bg-amber-300 text-black"></div>
+            <div class="card md:w-[50vh] w-[50vh] mt-12 md:mt-0 w-[100%] h-[85vh] bg-amber-300 text-black"></div>
    <a
       class="flex items-center p-2 text-base font-normal text-amber-900 rounded-lg dark:text-white hover:bg-amber-100 dark:hover:bg-amber-700">
       <span class="ml-3">${data.name}</span>

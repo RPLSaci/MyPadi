@@ -5,6 +5,10 @@ if(!localStorage.getItem("id")){
   generateId()
 }
 
+function resetId(){
+  localStorage.removeItem("id")
+  document.location.href = "./pawi.html"
+}
 async function generateId(){
   const response = await fetch(globalvar.api+'ai/generateId', {
     method: 'GET',
@@ -14,9 +18,14 @@ async function generateId(){
   console.log(res)
   localStorage.setItem("id",res.message)
 }
+let Tanya = false
 
 
 async function pertanyaan() {
+  if(tanya) {
+    return
+  }
+  Tanya = true
   question = document.getElementById("tanya").value
   document.getElementById("tanya").value = ""
   id = localStorage.getItem("id")
@@ -49,4 +58,6 @@ async function pertanyaan() {
          ${data.message}
       </div>
    </div>`
+
+   Tanya = false
 }
