@@ -1,3 +1,3 @@
 const globalvar = {
-    api:"https://padiapi.vercel.app/api/"
+    api:"https://mypadiapi.vercel.app/api/"
 }
