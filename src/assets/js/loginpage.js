@@ -14,7 +14,7 @@ register()
 async function register() {
     try {
       const username = document.getElementById('emailreg').value;
-      const password = document.getElementById('passwordreg').valute;
+      const password = document.getElementById('passwordreg').value;
       const confirmPassword = document.getElementById('confirm-passwordreg').value;
       const consent = document.getElementById("terms").checked
       console.log(consent)
