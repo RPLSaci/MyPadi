@@ -12,7 +12,7 @@ register();
 async function register() {
     try {
         const username = document.getElementById("emailreg").value;
-        const password = document.getElementById("passwordreg").valute;
+        const password = document.getElementById("passwordreg").value;
         const confirmPassword = document.getElementById("confirm-passwordreg").value;
         const consent = document.getElementById("terms").checked;
         console.log(consent);
@@ -72,4 +72,4 @@ async function login() {
     } else alert(data.error);
 }
 
-//# sourceMappingURL=login.5662fb66.js.map
+//# sourceMappingURL=login.a3f51a5e.js.map
