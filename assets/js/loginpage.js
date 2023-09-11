@@ -9,7 +9,6 @@ function $7dedf7def9d809c4$var$toggle() {
         document.querySelector("#singup").classList.remove("hidden");
     }
 }
-$7dedf7def9d809c4$var$register();
 async function $7dedf7def9d809c4$var$register() {
     try {
         const username = document.getElementById("emailreg").value;
