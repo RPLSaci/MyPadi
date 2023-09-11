@@ -8,7 +8,6 @@ function toggle() {
         document.querySelector("#singup").classList.remove("hidden");
     }
 }
-register();
 async function register() {
     try {
         const username = document.getElementById("emailreg").value;
@@ -72,4 +71,4 @@ async function login() {
     } else alert(data.error);
 }
 
-//# sourceMappingURL=login.a3f51a5e.js.map
+//# sourceMappingURL=login.2dbaa851.js.map
