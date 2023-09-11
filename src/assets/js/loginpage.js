@@ -10,7 +10,6 @@ function toggle(){
     }
 }
 
-register()
 async function register() {
     try {
       const username = document.getElementById('emailreg').value;
