@@ -16,7 +16,7 @@ async function $f8de8a9b2ec70507$var$getBerita(n) {
       <h2 class="card-title">${el.title}</h2>
       <p>${el.description}</p>
       <div class="card-actions justify-end">
-        <a href="${el.url}" class="bg-hijau-300 text-white btn border-none">Buka</a>
+        <a href="./berita-full.html?link=${el.url}" class="bg-hijau-300 text-white btn border-none">Buka</a>
       </div>
     </div>
  </div>`;
@@ -24,6 +24,15 @@ async function $f8de8a9b2ec70507$var$getBerita(n) {
     document.querySelector("#berita").innerHTML += html;
 }
 $f8de8a9b2ec70507$var$getBerita();
+async function $f8de8a9b2ec70507$var$rangkum() {
+    let response = await fetch(globalvar.api + "ai/summarizeNews", {
+        method: "GET"
+    });
+    response = await response.json();
+    console.log(response);
+    document.querySelector("#rangkuman").innerHTML += response.berita;
+}
+$f8de8a9b2ec70507$var$rangkum();
 
 })();
 //# sourceMappingURL=berita.js.map
