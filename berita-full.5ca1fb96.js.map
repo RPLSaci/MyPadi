@@ -1,0 +1,1 @@
+{"mappings":"AAAA,MAAM,YAAY;IACd,KAAI;AACR","sources":["src/assets/js/util/apis.js"],"sourcesContent":["const globalvar = {\n    api:\"https://8080-rplsaci-mypadiapi-ww8bjc8w9vw.ws-us104.gitpod.io/api/\"\n}"],"names":[],"version":3,"file":"berita-full.5ca1fb96.js.map"}

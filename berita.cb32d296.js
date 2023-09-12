@@ -15,7 +15,7 @@ async function getBerita(n) {
       <h2 class="card-title">${el.title}</h2>
       <p>${el.description}</p>
       <div class="card-actions justify-end">
-        <a href="${el.url}" class="bg-hijau-300 text-white btn border-none">Buka</a>
+        <a href="./berita-full.html?link=${el.url}" class="bg-hijau-300 text-white btn border-none">Buka</a>
       </div>
     </div>
  </div>`;
@@ -23,5 +23,14 @@ async function getBerita(n) {
     document.querySelector("#berita").innerHTML += html;
 }
 getBerita();
+async function rangkum() {
+    let response = await fetch(globalvar.api + "ai/summarizeNews", {
+        method: "GET"
+    });
+    response = await response.json();
+    console.log(response);
+    document.querySelector("#rangkuman").innerHTML += response.berita;
+}
+rangkum();
 
-//# sourceMappingURL=berita.fbf87b23.js.map
+//# sourceMappingURL=berita.cb32d296.js.map
