@@ -20,14 +20,27 @@ async function checkLogin() {
         }
         const data = await response.json();
         if (response.ok) {
+            document.querySelector("#namalanding").innerHTML = `Selamat Datang <span style="color: #026b38;">${data.user}</span>.`;
             console.log(`Halo ${data.user}! Anda sudah masuk.`);
-            document.getElementById("cards").classList.remove("hidden");
+        // document.getElementById("cards").classList.remove("hidden")
         } else alert("Gagal memeriksa status masuk.");
         checkUserInfo();
     } catch (error) {
+        document.querySelector("#landing").style.marginBottom = "1rem";
+        let alertElement1 = document.getElementById("alert");
+        alertElement1.style.display = "block";
+        setTimeout(()=>{
+            const alertElement = document.getElementById("alert");
+            if (alertElement) alertElement.style.display = "none";
+        }, 3000);
+        // Hide alert on button click
+        document.getElementById("closeButton").addEventListener("click", ()=>{
+            const alertElement = document.getElementById("alert");
+            if (alertElement) alertElement.style.display = "none";
+        });
         console.error(error);
-        alert("Kamu Belum Masuk");
-        document.location.href = "./login.html";
+        document.getElementById("loginwoi").classList.toggle("hidden");
+    // document.location.href = "./login.html"
     }
 }
 async function checkUserInfo() {
@@ -71,11 +84,11 @@ async function showPosition(position) {
     });
     const data = await response.json();
     console.log(data);
-    document.getElementById("cuaca").classList.remove("hidden");
-    document.getElementById("lokasi").innerText = data.location.name;
-    document.getElementById("status").innerText = data.cond.weather.description;
-    document.getElementById("temp").innerText = data.cond.weather.temp.cur + "\xb0 C";
-    document.getElementById("urlFoto").setAttribute("src", data.cond.weather.icon.url);
+// document.getElementById("cuaca").classList.remove("hidden")
+// document.getElementById("lokasi").innerText = data.location.name
+// document.getElementById("status").innerText = data.cond.weather.description
+// document.getElementById("temp").innerText = data.cond.weather.temp.cur +"° C"
+// document.getElementById("urlFoto").setAttribute("src",data.cond.weather.icon.url)
 // 
 //                            <h2 class="card-title" id="lokasi">Purwakarta</h2>
 // <p id="status">sedikit berawan</p>
@@ -86,4 +99,4 @@ let strToCards = `
 
 `;
 
-//# sourceMappingURL=index.f3645af4.js.map
+//# sourceMappingURL=index.0a9f762f.js.map
