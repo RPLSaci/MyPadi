@@ -1,3 +1,3 @@
 const globalvar = {
-    api:"https://8080-rplsaci-mypadiapi-ww8bjc8w9vw.ws-us104.gitpod.io/api/"
+    api:"https://zany-space-capybara-55464597jqpc7w7g-8080.app.github.dev/api/"
 }

@@ -5,103 +5,206 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>MyPadi</title>
+   <title>Agrifuture</title>
    <link rel="stylesheet" href="./assets/css/main.css">
    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
    <script src="./assets/js/util/apis.js" defer></script>
    <script src="./assets/js/index.js" defer></script>
    <script src="./assets/js/util/country.js" defer></script>
    <script src="../node_modules/flowbite/dist/flowbite.js"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-hijau-300 h-full min-h-[100vh]">
-   <nav class="p-2 sm:p-4 py-2.5 bg-amber-300 border-amber-200 dark:bg-amber-300 dark:border-amber-700">
-      <div class="container flex flex-wrap items-center justify-between mx-auto">
-         <a href="./index.html" class="flex items-center">
-            <img src="./assets/img/logoSidebar.jpeg" class="h-6 mr-3 sm:h-10 rounded-full" alt="Flowbite Logo" />
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">MyPadi</span>
-         </a>
-         <div class="flex gap-4">
-            <div class="flex md:order-2">
-               <a href="./login.html" type="button"
-                  class="text-white bg-hijau-300 hover:bg-hijau-400 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Logout</a>
+<header
+    class="fixed w-[95%] inset-x-0 top-4 z-40 mx-auto flex h-[60px] max-w-5xl items-center justify-between rounded-2xl px-8 shadow-sm saturate-100 backdrop-blur-[10px] transition-colors"
+    style="transform: none; background-color: hsl(0 0% 0%/ 0.09); color: black;">
+    <a class="flex items-center justify-center gap-1" href="/"><span class="sr-only">Homepage</span>Agrifuture</a>
+    <div class="flex items-center  gap-2">
+        <nav>
+            <ul class="hidden space-x-2 md:flex">
+                <li class="relative flex h-[60px] items-center justify-center"><a
+                        class="rounded px-3 py-2 text-sm font-medium transition-colors text-muted-foreground"
+                        href="/">Home</a></li>
+                <!-- <li class="relative flex h-[60px] items-center justify-center"><a
+                        class="rounded px-3 py-2 text-sm font-medium transition-colors text-muted-foreground"
+                        href="/projects">Projects</a></li> -->
+            </ul>
+        </nav>
+        <div data-orientation="vertical" role="none" class="shrink-0 bg-border w-px h-6"></div>
+        <button onclick="minimenu()"
+            class="whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground flex size-9 items-center justify-center p-0 md:hidden"
+            type="button" aria-label="Toggle menu" aria-haspopup="menu" aria-expanded="false" data-state="closed"><span
+                class="sr-only">Toggle menu</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-menu size-4">
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg></button>
+    </div>
+    <div id="minibar"
+        class="hidden backdrop-blur-[10px] right-0 z-50 mt-32 overflow-hidden absolute rounded-md border bg-popover p-1 text-popover-foreground shadow-md min-w-52"
+        style="outline: none; pointer-events: auto; opacity: 50%;">
+        <a class="place-content-center m-1.5 relative cursor-default select-none rounded-sm px-2 py-1.5 text-sm outline-none transition-colors  flex items-center gap-4"
+            href="/">
+            <div>Home</div>
+        </a>
+        <a class="place-content-center m-1.5 relative cursor-default select-none rounded-sm px-2 py-1.5 text-sm outline-none transition-colors  flex items-center gap-4"
+            href="/home">
+            <div>Projects</div>
+        </a>
+    </div>
+
+</header>
+
+<body>
+    <div id="content-wrapper" class="bg-white">
+        <div id="alert" style="z-index: 10000; display: none;" class="mt-[4rem] fixed top-4 right-4 bg-warning text-white px-4 py-3 rounded shadow-lg flex items-center">
+            <span class="flex-grow">Kamu Belum Login</span>
+            <button id="closeButton" class="text-white ml-4 font-bold">X</button>
+        </div>
+        <section class="text-center min-h-screen grid top-land m-auto w-[80%]" data-aos="fade-down">
+            <div class="m-auto block md:inline-flex" id="landing">
+                <img src="./assets/img/logo.png" class="rounded-lg animate-pulsepfp mx-auto w-72">
+                <div
+                    class="container pt-3 text-6xl font-bold font-sans m-auto text-left mx-0 sm:mx-6 text-center sm:text-left">
+                    <h1 class="text-black text-3xl" id="namalanding">Selamat Datang<br></h1>
+                    <span class="text-black">
+                        <span class="text-6xl" style="color: #026b38;">Agrifuture</span>!
+                    </span>
+                    <h2 class="text-3xl font-light text-black mt-3 montserrat-regular">Platform Pertanian</h2>
+                        <p class="mb-10 text-sm font-medium leading-relaxed text-black"><span style="color: #026b38;">Scroll</span> Untuk Melanjutkan</p>
+                </div>
             </div>
-            <div class="flex md:order-2">
-               <a href="./login.html" type="button"
-                  class="text-white bg-hijau-300 hover:bg-hijau-400 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Input Data</a>
-            </div>
-         </div>
-      </div>
-   </nav>
-   <div class="flex">
-      <div id="main" class="m-auto">
-         <div class="container grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 hidden" id="cards">
-            <a class="card w-96 bg-amber-300 text-black mt-12" href="./berita.html">
-               <div class="card-body  px-0 pb-0">
-                  <h2 class="card-title m-auto">Berita pertanian</h2>
-                  <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
-                     <img src="./assets/img/103657_news_icon.png" class="h-[100px] w-[100px] !mt-4 m-auto">
-                  </div>
-               </div>
-            </a>
-            <div class="card w-96 bg-amber-300 text-black mt-12 hidden" id="cuaca">
-               <div class="card-body px-0 pb-0">
-                  <h2 class="card-title m-auto">Cuaca</h2>
-                  <div class="flex bg-white rounded-[15px] rounded-tl-none rounded-tr-none">
-                     <div class="flex m-auto">
-                        <figure><img src="http://openweathermap.org/img/wn/04d@2x.png" id="urlFoto" class="w-[125px] h-auto">
-                        </figure>
-                        <div class="card-body">
-                           <h2 class="card-title" id="lokasi">Purwakarta</h2>
-                           <p id="status">sedikit berawan</p>
-                           <p id="temp">26°C</p>
+            <a href="./login.html" id="loginwoi" class="btn btn-primary hidden" style="background-color: #026b38;">Login Sekarang</a>
+        </section>
+        <section class="text-center pt-12 pb-12" data-aos="fade-down">
+            <div class="flex flex-col w-full md:flex-row">
+                <div class="text-black mt-4 py-4 mx-4" style="width:22rem; margin:auto; background-color: #f8f8f8; border: #cdcdcd 1px solid; border-radius: 25px;" href="./pawi.html">
+                       <h2 class="text-4xl m-auto pt-4 pb-2 francois-one-regular" style="font-weight: 700;">Tanya <span style="color : #026b38;">PAWI</span></h2>
+                       <span class="montserrat-regular text-sm">Asisten Kamu Dalam Pertanian</span>
+                       <div class="rounded-[15px] rounded-tl-none rounded-tr-none h-full">
+                          <img src="./assets/img/pawibaru.png" class="h-auto w-[255px] m-auto">
+                            <a style="background-color: #026b38 !important;" href="./pawi.html" class="btn btn-primary montserrat-regular">Open Chat</a>
+                       </div>
+                    </div>
+                <div class="grid card m-auto mt-8 md:mt-0">
+                    <div class="w-72 text-black mt-4 py-4 mx-4" style="width:500px; margin:auto; background-color: #f8f8f8; border: #cdcdcd 1px solid; border-radius: 25px;" href="./pawi.html">
+                        <h2 class="text-4xl m-auto pt-4 text-left ml-6 pb-2 francois-one-regular" style="font-weight: 700;">Deteksi <span style="color : #026b38;">Iklim</span></h2>
+                        <span class="montserrat-regular text-sm">Gunakan Ekstensi khusus “AgriDetector” atau<span style="color : #026b38;"> Melalui GPS.</span></span>
+                        <div class="rounded-[15px] rounded-tl-none rounded-tr-none h-full mt-4">
+                             <a style="background-color: #026b38 !important;" href="./pawi.html" class="btn btn-primary montserrat-regular">Start</a>
                         </div>
                      </div>
-                  </div>
-               </div>
+                     <div class="w-72 text-black py-4 mx-4 mt-4 pb-6 md:mt-16 m-auto" style=" width:500px; background-color: #f8f8f8; border: #cdcdcd 1px solid; border-radius: 25px;" href="./pawi.html">
+                        <div class="rounded-[15px] rounded-tl-none rounded-tr-none h-full mt-4 !m-auto inline-flex pl-6">
+                            <a style="background-color: #026b38 !important;" href="./pawi.html" class="btn btn-primary montserrat-regular !m-auto">Start</a>
+                            <h2 class="text-4xl m-auto pt-4 text-left ml-6 pb-2 francois-one-regular" style="font-weight: 700;">Climate-Smart <span style="color : #026b38;">Agriculture</span></h2>
+                        </div>
+                        <span class="montserrat-regular text-sm">Pelajari Lebih Lanjut tentang <span style="color : #026b38;">Metode Bertani ramah lingkungan.</span></span>
+                     </div>
+                </div>
             </div>
-            <div class="card w-96 bg-amber-300 text-black mt-12">
-               <div class="card-body  px-0 pb-0">
-                  <h2 class="card-title m-auto">Kalender Panen</h2>
-                  <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
-                     <img src="./assets/img/calendar.png" class="h-[100px] w-[100px] !mt-4 m-auto">
-                  </div>
-               </div>
+        </section>
+        <section class="pt-10 text-center m-auto w-90 pb-8 hidden" data-aos="fade-up">
+            <h1 class="lg:text-4xl md:text-3xl text-2xl font-bold text-black">Languages</h1>
+            <div class="divider m-auto"></div>
+            <div id="langs" class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                <div class="w-3/4 px-2 mx-auto">
+                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
+                        <div class="text-center ">
+                            <i class="fi fi-id rounded-lg mx-auto text-9xl shadow-2xl"></i>
+                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium text-black">Indonesia</h5>
+                            <p>Umm... im indonesian...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-3/4 px-2 mx-auto">
+                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
+                        <div class="text-center">
+                            <i class="fi fi-us rounded-lg mx-auto text-9xl shadow-2xl"></i>
+                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium text-black">English</h5>
+                            <p>I won't say I'm fluent in English, but my English is kinda decent</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-3/4 px-2 mx-auto">
+                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
+                        <div class="text-center">
+                            <i class="fi fi-jp rounded-lg mx-auto text-9xl shadow-2xl"></i>
+                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium text-black">Japanese</h5>
+                            <p>I've been learning Japanese since Early 2020, and I'm planning to get JLPT N4/N3
+                                Certificates
+                                in a year or two</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card w-96 bg-amber-300 text-black mt-12">
-               <div class="card-body  px-0 pb-0">
-                  <h2 class="card-title m-auto">Marketplace</h2>
-                  <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
-                     <img src="./assets/img/marketplace.png" class="h-[100px] w-[100px] !mt-4 m-auto">
-                  </div>
-               </div>
-            </div>
-            <a class="card w-96 bg-amber-300 text-black mt-12" href="./pawi.html">
-               <div class="card-body  px-0 pb-0">
-                  <h2 class="card-title m-auto">Tanya Pawi</h2>
-                  <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
-                     <img src="./assets/img/pawi.png" class="h-auto w-[125px] m-auto">
-                  </div>
-               </div>
-            </a>
-         </div>
-      </div>
-   </div>
+        </section>
+    </div>
 </body>
+
+<footer class="footer footer-center p-10 text-neutral-content montserrat-regular" style="background-color: #f1f1f1;">
+    <aside>
+        <img src="./assets/img/logo.png" class="w-[80px]">
+      <p class="font-bold">
+        Agrifuture <br>Platform Pertanianmu.
+      </p> 
+      <p>Copyright RPLSACI© 2024 - All right reserved</p>
+    </aside> 
+    <nav>
+      <div class="grid grid-flow-col gap-4">
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+      </div>
+    </nav>
+  </footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+        },
+    });
+</script>
 <!-- PLACEHOLDER -->
 <div class="hidden">
    <a href="#"
       class="block mt-12 max-w-sm p-6 bg-white border border-amber-200 rounded-lg shadow-md hover:bg-amber-100 dark:bg-amber-800 dark:border-amber-700 dark:hover:bg-amber-700">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 dark:text-white">placeholder</h5>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 text-black">placeholder</h5>
       <p class="font-normal text-amber-700 dark:text-amber-400">placeholder</p>
    </a>
    <a
       class="block mt-12 max-w-sm p-6 bg-white border border-amber-200 rounded-lg shadow-md hover:bg-amber-100 dark:bg-amber-800 dark:border-amber-700 dark:hover:bg-amber-700">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 dark:text-white">${data.name}</h5>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-amber-900 text-black">${data.name}</h5>
       <p class="font-normal text-amber-700 dark:text-amber-400">${getCountryName(data.lang)}</p>
    </a>
    <a
-      class="flex items-center p-2 text-base font-normal text-amber-900 rounded-lg dark:text-white hover:bg-amber-100 dark:hover:bg-amber-700">
+      class="flex items-center p-2 text-base font-normal text-amber-900 rounded-lg text-black hover:bg-amber-100 dark:hover:bg-amber-700">
       <span class="ml-3">${data.name}</span>
    </a>
 </div>
