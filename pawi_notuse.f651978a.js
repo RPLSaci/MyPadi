@@ -49,4 +49,4 @@ async function pertanyaan() {
     Tanya = false;
 }
 
-//# sourceMappingURL=pawi.b5f1dd8a.js.map
+//# sourceMappingURL=pawi_notuse.f651978a.js.map

@@ -51,42 +51,49 @@
 </header>
 
 <body>
-      <div id="main" class="m-auto md:flex gap-8 pt-16 pb-16" style="background-color: #fff; place-content: center; align-items: center; min-height: 100vh">
-         <!-- <div class="bg-white w-[90vh] h-[85vh] rounded-[2rem]"></div> -->
-         <div class="card md:w-[90vh] md:min-w-[90vh] max-w-[100%] w-[100%] h-[85vh] bg-amber-300 text-white francois-one-regular" style="background-color: #026b38; border: 1px solid #000">
-            <div class="card-body px-0 pb-0">
-               <h2 class="card-title m-auto ">Tanya <span style="color: #fdea00">PAWI</span></h2>
-               <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
-                  <div class="space-y-4 w-[95%] max-h-[60vh] overflow-x-auto h-[80%] m-auto mt-0 montserrat-regular" id="chats">
-                     <!-- Person 1 (You) -->
-
-                     <!-- Person 2 (Other) -->
-                     <div class="flex mt-8">
-                        <div class="max-w-xs bg-amber-300 p-2 rounded-md" style="color: #000; background: #f8f8f8; border: 1px solid #000; font-size: smaller">
-                           Halo, nama saya Pawi, saya disini untuk membantu kamu dalam dunia pertanian, apakah ada yang bisa saya bantu ?
-                        </div>
-                     </div>
-
-                     <!-- More Messages Go Here -->
-                  </div>
-                  <div class="bg-white p-4 shadow-md rounded-md">
-                     <div class="flex">
-                        <input type="text" placeholder="Tulis Pesan Kamu..." id="tanya" class="flex-grow border bg-hijau-400 rounded-md p-2">
-                        <button style="background-color: #026b38" class=" text-white rounded-md px-4 py-2 ml-2" onclick="pertanyaan()">Kirim</button>
-                        <button class="bg-red-500 text-white rounded-md px-4 py-2 ml-2" onclick="resetId()">Reset</button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="card md:w-[50vh] min-w-[50vh] mt-12 md:mt-0 w-[100%] h-[85vh] text-black" style="background-color: #026b38; border: 1px solid #000">
-            <div class="card-body  px-0 pb-0">
-               <h2 class="card-title m-auto francois-one-regular text-white">Rekomendasi</h2>
-               <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
-               </div>
+   <div id="main" class="m-auto md:flex grid sm:grid-cols-2 md:grid-cols-1 gap-8 pt-24 pb-16" style="background-color: #fff; place-content: center; align-items: center; min-height: 100vh">
+      <!-- <div class="bg-white w-[90vh] h-[85vh] rounded-[2rem]"></div> -->
+      <div class="card w-[35vh] min-w-[35vh] mt-12 md:mt-0 h-[85vh] text-black m-auto" style="border: 1px solid #000">
+         <div class="card-body text-center px-0 pb-0">
+            <span class="card-title m-auto francois-one-regular text-black text-4xl">Terrace</span>
+            <span class="card-title m-auto francois-one-regular text-4xl" style="color: #026b38">Farming</span>
+            <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
+               <img src="/terace.9e8fb90e.png" alt="" class="w-[65%] m-auto rounded-lg mt-4">
+               <a class="btn btn-primary text-white mt-6" style="background-color: #026b38 !important">Pelajari <br> lebih lanjut </a>
             </div>
          </div>
       </div>
+      <div class="card w-[35vh] min-w-[35vh] mt-12 md:mt-0 h-[85vh] text-black m-auto" style="border: 1px solid #000">
+         <div class="card-body text-center px-0 pb-0">
+            <span class="card-title m-auto francois-one-regular text-black text-4xl">Irigasi</span>
+            <span class="card-title m-auto francois-one-regular text-4xl" style="color: #026b38">Lanjutan</span>
+            <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
+               <img src="/irigasilanjutan.06c213d6.png" alt="" class="w-[65%] m-auto rounded-lg mt-4">
+               <a class="btn btn-primary text-white mt-6" style="background-color: #026b38 !important">Pelajari <br> lebih lanjut </a>
+            </div>
+         </div>
+      </div>
+      <div class="card w-[35vh] min-w-[35vh] mt-12 md:mt-0 h-[85vh] text-black m-auto" style="border: 1px solid #000">
+         <div class="card-body text-center px-0 pb-0">
+            <span class="card-title m-auto francois-one-regular text-black text-4xl">Pertanian</span>
+            <span class="card-title m-auto francois-one-regular text-4xl" style="color: #026b38">Terpadu</span>
+            <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
+               <img src="/tanipadu.695d96ec.png" alt="" class="w-[65%] m-auto rounded-lg mt-4">
+               <a class="btn btn-primary text-white mt-6" style="background-color: #026b38 !important">Pelajari <br> lebih lanjut </a>
+            </div>
+         </div>
+      </div>
+      <div class="card w-[35vh] min-w-[35vh] mt-12 md:mt-0 h-[85vh] text-black m-auto" style="border: 1px solid #000">
+         <div class="card-body text-center px-0 pb-0">
+            <span class="card-title m-auto francois-one-regular text-black text-4xl">Varietas</span>
+            <span class="card-title m-auto francois-one-regular text-4xl" style="color: #026b38">Tanaman</span>
+            <div class="bg-white rounded-[15px] rounded-tl-none rounded-tr-none h-full">
+               <img src="/varietas.b61920a8.png" alt="" class="w-[65%] m-auto rounded-lg mt-4">
+               <a class="btn btn-primary text-white mt-6" style="background-color: #026b38 !important">Pelajari <br> lebih lanjut </a>
+            </div>
+         </div>
+      </div>
+   </div>
 </body>
 
 <footer class="footer footer-center p-10 text-neutral-content montserrat-regular" style="background-color: #f1f1f1">
