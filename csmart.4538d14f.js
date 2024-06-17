@@ -1,3 +1,10 @@
+function minimenu() {
+    document.querySelector("#minibar").classList.toggle("hidden");
+}
+function logout() {
+    localStorage.clear();
+    document.location.href = "./login";
+}
 async function checkLogin() {
     try {
         let token = localStorage.getItem("user"); // Assuming the token is stored in localStorage
@@ -99,4 +106,4 @@ let strToCards = `
 
 `;
 
-//# sourceMappingURL=index.0a9f762f.js.map
+//# sourceMappingURL=csmart.4538d14f.js.map

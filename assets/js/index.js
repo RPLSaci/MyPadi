@@ -1,4 +1,11 @@
 (() => {
+function $81db66f57de44e2f$var$minimenu() {
+    document.querySelector("#minibar").classList.toggle("hidden");
+}
+function $81db66f57de44e2f$var$logout() {
+    localStorage.clear();
+    document.location.href = "./login";
+}
 async function $81db66f57de44e2f$var$checkLogin() {
     try {
         let token = localStorage.getItem("user"); // Assuming the token is stored in localStorage

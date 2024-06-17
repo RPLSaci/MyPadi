@@ -1,0 +1,1 @@
+{"mappings":"AAAA,MAAM,YAAY;IACd,KAAI;AACR","sources":["src/assets/js/util/apis.js"],"sourcesContent":["const globalvar = {\n    api:\"https://zany-space-capybara-55464597jqpc7w7g-8080.app.github.dev/api/\"\n}"],"names":[],"version":3,"file":"csmart.2d0c5957.js.map"}
