@@ -31,8 +31,8 @@
                         class="rounded px-3 py-2 text-sm font-medium transition-colors text-muted-foreground"
                         href="/">Home</a></li>
                         <li class="relative flex h-[60px] items-center justify-center"><div
-                            class="btn btn-primary text-white" style="background-color: #026b38!important;"
-                            onclick="logout()">Logout</div></li>
+                            class="btn btn-primary hidden text-white" style="background-color: #026b38!important;"
+                            onclick="logout()" id="logoutbtn">Logout</div></li>
                 <!-- <li class="relative flex h-[60px] items-center justify-center"><a
                         class="rounded px-3 py-2 text-sm font-medium transition-colors text-muted-foreground"
                         href="/projects">Projects</a></li> -->
@@ -66,6 +66,10 @@
 </header>
 
 <body>
+   <div id="alert" style="z-index: 10000; display: none;" class="mt-[4rem] fixed top-4 right-4 bg-warning text-white px-4 py-3 rounded shadow-lg flex items-center">
+      <span class="flex-grow">Kamu Belum Login</span>
+      <button id="closeButton" class="text-white ml-4 font-bold">X</button>
+  </div>
    <div id="main" class="m-auto md:flex grid sm:grid-cols-2 md:grid-cols-1 gap-8 pt-24 pb-16" style="min-height: 100vh; background-color: white; place-content: center; align-items: center;">
       <!-- <div class="bg-white w-[90vh] h-[85vh] rounded-[2rem]"></div> -->
       <div class="card w-[35vh] min-w-[35vh] mt-12 md:mt-0 h-[85vh] text-black m-auto" style="border: black 1px solid;">

@@ -34,6 +34,7 @@ async function checkLogin() {
   
       const data = await response.json();
       if (response.ok) {
+        document.querySelector("#logoutbtn").classList.toggle("hidden")
         document.querySelector("#namalanding").innerHTML = `Selamat Datang <span style="color: #026b38;">${data.user}</span>.`
         console.log(`Halo ${data.user}! Anda sudah masuk.`);
 
@@ -43,7 +44,9 @@ async function checkLogin() {
       }
       checkUserInfo()
     } catch (error) {
-      document.querySelector("#landing").style.marginBottom = "1rem"
+      if(document.querySelector("#landing")){
+        document.querySelector("#landing").style.marginBottom = "1rem"
+      }
       let alertElement1 = document.getElementById('alert');
       alertElement1.style.display = "block"
       setTimeout(() => {
