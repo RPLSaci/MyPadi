@@ -28,13 +28,14 @@ async function $81db66f57de44e2f$var$checkLogin() {
         }
         const data = await response.json();
         if (response.ok) {
+            document.querySelector("#logoutbtn").classList.toggle("hidden");
             document.querySelector("#namalanding").innerHTML = `Selamat Datang <span style="color: #026b38;">${data.user}</span>.`;
             console.log(`Halo ${data.user}! Anda sudah masuk.`);
         // document.getElementById("cards").classList.remove("hidden")
         } else alert("Gagal memeriksa status masuk.");
         $81db66f57de44e2f$var$checkUserInfo();
     } catch (error) {
-        document.querySelector("#landing").style.marginBottom = "1rem";
+        if (document.querySelector("#landing")) document.querySelector("#landing").style.marginBottom = "1rem";
         let alertElement1 = document.getElementById("alert");
         alertElement1.style.display = "block";
         setTimeout(()=>{
