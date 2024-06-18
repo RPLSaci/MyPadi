@@ -3746,6 +3746,10 @@ html {
   width: 80px;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .w-\[90vh\] {
   width: 90vh;
 }
@@ -4727,4 +4731,4 @@ html {
     background-color: rgb(180 83 9 / var(--tw-bg-opacity));
   }
 }
-/*# sourceMappingURL=csmart.6ed71951.css.map */
+/*# sourceMappingURL=csmart.bf408855.css.map */
